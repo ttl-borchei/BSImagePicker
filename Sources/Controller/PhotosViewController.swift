@@ -245,7 +245,7 @@ extension PhotosViewController {
         // We can manage it ourself.
 
         // Camera shouldn't be selected, but pop the UIImagePickerController!
-        if let composedDataSource = composedDataSource , composedDataSource.dataSources[indexPath.section].isEqual(cameraDataSource) {
+        if let composedDataSource = composedDataSource , composedDataSource.dataSources[indexPath.section].isEqual(cameraDataSource) && assetStore.assets.count < settings.maxNumberOfSelections {
             let cameraController = UIImagePickerController()
             cameraController.allowsEditing = false
             cameraController.sourceType = .camera
