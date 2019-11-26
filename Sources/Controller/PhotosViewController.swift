@@ -249,7 +249,9 @@ extension PhotosViewController {
             cameraController.allowsEditing = false
             cameraController.sourceType = .camera
             cameraController.delegate = self
-            
+            //cameraController.mediaTypes = [.image as String,kUTTypeImage as String];
+            cameraController.mediaTypes = [(kUTTypeImage as String), (kUTTypeVideo as String)]
+            //cameraController.mediaTypes = AVMediaType.video;
             self.present(cameraController, animated: true, completion: nil)
             
             return false
